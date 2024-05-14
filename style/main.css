@@ -447,6 +447,7 @@ nav .menu-icon {
         width: 40vh;
         height: 40vh;
         object-fit: cover;
+        max-width: 90%;
     }
     .gallery {
         display: flex;
