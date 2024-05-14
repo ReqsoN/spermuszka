@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tymoteusz Górnisiewicz">
+    <meta name="keywords" content="fryzjer, Filip, Oktawian, Filip i Oktawian, salon fryzjerski wrocław, wrocław">
+    <meta name="description" content="Strona internetowa wykonana dla filip.oktawian - salon fryzjerski">  
+    <title>Filip.Oktawian</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="Shortcut Icon" type="image/ico" href="favicon.ico">
+    <script src="https://kit.fontawesome.com/1155a87926.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <div id="logo">
+            <img src="img/logo.png">
+        </div>
+    </header>
+
+    <nav>
+		<div class="menu-icon">
+			<img src="img/hamburger.png">
+		</div>
+		<ul>
+			<li><a href="index.html">O nas</a></li>
+			<li><a href="cennik.html">Cennik</a></li>
+			<li><a href="#">Galeria</a></li>
+			<li><a href="kontakt.html">Kontakt</a></li>
+		</ul>
+	</nav>
+
+	<!--
+        <script src="https://kit.fontawesome.com/your_key.js" crossorigin="anonymous"></script>
+    -->
+	<script>
+		document.querySelector('.menu-icon').addEventListener('click', function() {
+			document.querySelector('nav').classList.toggle('active');
+		});
+	</script>
+
+    <section>
+
+        <div class="galeria-podstrona">
+            <div class="gallery">
+                <div class="image">
+                  <img src="img/salon.1.jpeg">
+                </div>
+                <div class="image">
+                  <img src="img/salon.2.jpeg">
+                </div>
+                <div class="image">
+                  <img src="img/salon.3.jpeg">
+                </div>
+                <div class="image">
+                  <img src="img/salon.4.jpeg">
+                </div>
+                <div class="image">
+                  <img src="img/salon.5.jpeg">
+                </div>
+            </div>
+          </div>
+        
+
+    </section>
+    
+    <footer>
+        <div class="stopka">
+            <div class="footer-element">
+                <div class="info">
+                    <h3 class="footer-header">
+                        Godziny otwarcia
+                    </h3>
+                    Wtorek - Piątek: <b>10<sup>00</sup>-20<sup>00</sup></b><br>
+                    Sobota: <b>9<sup>00</sup>-15<sup>00</sup></b>
+                </div>
+            </div>
+            <div class="footer-element">
+                <div class="info">
+                    <h3 class="footer-header">
+                        Kontakt
+                    </h3>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <a href="tel:+48514433908">+48 514433908</a><br>
+                    <i class="fa fa-envelope " aria-hidden="true"></i>
+                    <a href="mailto:kontakt@filip-oktawian.pl">kontakt@filip-oktawian.pl</a><br>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>Filip.Oktawian <br> Kazimierza Wielkiego 55 <br> 50-077 Wrocław</span>
+                </div>
+            </div> 
+            <div class="footer-element">
+                <div class="info">
+                    <h3 class="footer-header">
+                        Social Media
+                    </h3>
+                    <div id="ikonki">
+                        <div class="footer-position">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                            <a href="https://www.facebook.com/filip.oktawian/?locale=pl_PL">filip.oktawian</a>
+                        </div>
+                        <div class="footer-position">
+                            <i class="fa-brands fa-instagram"></i>
+                            <a href="https://www.instagram.com/filip.oktawian/">filip.oktawian</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="author">
+        <p id="sign" align="center">© 2024 filip.oktawian<br>
+            Projekt i wykonanie: Tymoteusz Górnisiewicz</p>
+        </div>
+
+
+        
+
+    </footer>
+</body>
+</html>

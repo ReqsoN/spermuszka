@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tymoteusz Górnisiewicz">
+    <meta name="keywords" content="fryzjer, Filip, Oktawian, Filip i Oktawian, salon fryzjerski wrocław, wrocław">
+    <meta name="description" content="Strona internetowa wykonana dla filip.oktawian - salon fryzjerski">  
+    <title>Filip.Oktawian</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="Shortcut Icon" type="image/ico" href="favicon.ico">
+    <script src="https://kit.fontawesome.com/1155a87926.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <div id="logo">
+            <img src="img/logo.png">
+        </div>
+    </header>
+
+    <nav>
+		<div class="menu-icon">
+			<img src="img/hamburger.png">
+		</div>
+		<ul>
+			<li><a href="#">O nas</a></li>
+			<li><a href="cennik.html">Cennik</a></li>
+			<li><a href="galeria.html">Galeria</a></li>
+			<li><a href="kontakt.html">Kontakt</a></li>
+		</ul>
+	</nav>
+
+	<!--
+        <script src="https://kit.fontawesome.com/your_key.js" crossorigin="anonymous"></script>
+    -->
+	<script>
+		document.querySelector('.menu-icon').addEventListener('click', function() {
+			document.querySelector('nav').classList.toggle('active');
+		});
+	</script>
+
+    <section>
+
+
+        <div class="content">
+            
+            <div class="text">
+                <h1>
+                    Poznaj nas
+                </h1>
+                
+                <p>Salon fryzjerski Filip.Oktawian to miejsce o bogatej historii, które istnieje od 2009 roku. Od 2014 roku znajdujemy się w samym sercu Wrocławia. Nasz zespół składa się z doświadczonych fryzjerów,
+                    którzy mają szeroką wiedzę z zakresu fryzjerstwa i pasję do tworzenia doskonałych fryzur. Naszym priorytetem jest zapewnienie wysokiej jakości usług, dlatego stale rozwijamy swoje umiejętności
+                    i dbamy o przyjemną atmosferę w salonie. Używamy tylko najlepszych produktów na rynku, aby zapewnić naszym klientom najlepsze efekty. Jesteśmy otwarci na wyzwania i słyniemy z indywidualnego podejścia do każdego klienta.
+                    Naszą największą satysfakcją jest uśmiech i zadowolenie naszych klientów. Codziennie staramy się spełnić ich oczekiwania i podkreślić ich naturalne piękno. W salonie fryzjerskim Filip.Oktawian
+                    zapewniamy profesjonalne usługi fryzjerskie oraz przyjazną i relaksującą atmosferę. Zapraszamy do naszego salonu, gdzie zadbamy o Twój wygląd i sprawimy, że poczujesz się pięknie i pewnie siebie.
+                </p>
+            </div>
+            <br>
+            
+    
+        </div>
+
+        <div class="content-gallery">   
+            <div class="photos">
+                <img src="img/galeria1.jpeg" class="gallery-image">
+                <img src="img/galeria2.jpeg" class="gallery-image">
+                <img src="img/galeria3.jpeg" class="gallery-image">
+            </div>
+            <div id="incontent">
+                <a href="galeria.html" class="bttn">
+                    Zobacz Galerie
+                </a>   
+            </div>
+        </div>
+        <br>
+
+
+        <div class="content">
+            
+            <div class="text">
+                <h1>
+                    Umów wizytę już teraz!
+                </h1>
+                
+                <p>Skontaktuj się z nami.</p>
+
+                
+             
+            </div>
+
+            <div id="incontent">
+                <a href="kontakt.html" class="bttn">
+                    Kontakt
+                </a>
+                
+            </div>
+            
+           
+        </div>
+
+        <!--
+        <div id="gallery">
+            <img src="img/galeria1.jpeg" alt="Image 1" class="gallery-auto">
+            <img src="img/galeria2.jpeg" alt="Image 2" class="gallery-auto">
+            <img src="img/galeria3.jpeg" alt="Image 3" class="gallery-auto">
+        </div>
+        -->
+
+          
+        <script>
+            var gallery = document.getElementById("gallery");
+            var images = gallery.getElementsByTagName("img");
+
+            var currentImageIndex = 0;
+
+            for (var i = 1; i < images.length; i++) {
+            images[i].style.display = "none";
+            }
+
+            function switchImage() {
+            images[currentImageIndex].style.display = "none"; 
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].style.display = "block";
+            }
+
+            setInterval(switchImage, 4000);
+        </script>
+
+
+        <script>
+            const galleryImages = document.querySelectorAll('.gallery-image');
+
+            const modal = document.createElement('div');
+            modal.classList.add('modal');
+
+            const modalContent = document.createElement('div');
+            modalContent.classList.add('modal-content');
+
+            const modalClose = document.createElement('span');
+            modalClose.classList.add('modal-close');
+            modalClose.innerHTML = '&times;';
+
+            const modalPrev = document.createElement('span');
+            modalPrev.classList.add('modal-prev');
+            modalPrev.innerHTML = '&lsaquo;';
+
+            const modalNext = document.createElement('span');
+            modalNext.classList.add('modal-next');
+            modalNext.innerHTML = '&rsaquo;';
+
+            modalContent.appendChild(modalClose);
+            modalContent.appendChild(modalPrev);
+            modalContent.appendChild(modalNext);
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+
+            let currentIndex = 0;
+
+            function openModal(index) {
+                currentIndex = index;
+
+                const currentImage = galleryImages[currentIndex];
+
+                const enlargedImage = document.createElement('img');
+                enlargedImage.src = currentImage.src;
+
+                modalContent.innerHTML = '';
+                modalContent.appendChild(enlargedImage);
+                modalContent.appendChild(modalPrev);
+                modalContent.appendChild(modalNext);
+                modalContent.appendChild(modalClose);
+                modal.style.display = 'flex';
+            }
+
+            function closeModal() {
+                modal.style.display = 'none';
+            }
+
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            function prevImage() {
+                currentIndex--;
+                if (currentIndex < 0) {
+                    currentIndex = galleryImages.length - 1;
+                }
+                openModal(currentIndex);
+            }
+
+            function nextImage() {
+                currentIndex++;
+                if (currentIndex >= galleryImages.length) {
+                    currentIndex = 0;
+                }
+                openModal(currentIndex);
+            }
+
+            galleryImages.forEach((image, index) => {
+                image.addEventListener('click', () => openModal(index));
+            });
+
+            modalClose.addEventListener('click', closeModal);
+            modalPrev.addEventListener('click', prevImage);
+            modalNext.addEventListener('click', nextImage);
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowLeft') {
+                    prevImage();
+                } else if (event.key === 'ArrowRight') {
+                    nextImage();
+                }
+            });
+        </script>
+
+
+    </section>
+    
+    <footer>
+        <div class="stopka">
+            <div class="footer-element">
+                <div class="info">
+                    <h3 class="footer-header">
+                        Godziny otwarcia
+                    </h3>
+                    Wtorek - Piątek: <b>10<sup>00</sup>-20<sup>00</sup></b><br>
+                    Sobota: <b>9<sup>00</sup>-15<sup>00</sup></b>
+                </div>
+            </div>
+            <div class="footer-element">
+                <div class="info">
+                    <h3 class="footer-header">
+                        Kontakt
+                    </h3>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <a href="tel:+48514433908">+48 514433908</a><br>
+                    <i class="fa fa-envelope " aria-hidden="true"></i>
+                    <a href="mailto:kontakt@filip-oktawian.pl">kontakt@filip-oktawian.pl</a><br>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>Filip.Oktawian <br> Kazimierza Wielkiego 55 <br> 50-077 Wrocław</span>
+                </div>
+            </div> 
+            <div class="footer-element">
+                <div class="info">
+                    <h3 class="footer-header">
+                        Social Media
+                    </h3>
+                    <div id="ikonki">
+                        <div class="footer-position">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                            <a href="https://www.facebook.com/filip.oktawian/?locale=pl_PL">filip.oktawian</a>
+                        </div>
+                        <div class="footer-position">
+                            <i class="fa-brands fa-instagram"></i>
+                            <a href="https://www.instagram.com/filip.oktawian/">filip.oktawian</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="author">
+        <p id="sign" align="center">© 2024 filip.oktawian<br>
+            Projekt i wykonanie: Tymoteusz Górnisiewicz</p>
+        </div>
+
+    </footer>
+</body>
+</html>
