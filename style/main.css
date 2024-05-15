@@ -486,7 +486,7 @@ nav .menu-icon {
         justify-content: center;
     }
     .container {
-        padding: 5em;
+        padding: 5em 0;
     }
     .map iframe {
         min-width: 40vh;
