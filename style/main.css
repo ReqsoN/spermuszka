@@ -370,10 +370,9 @@ nav .menu-icon {
     width: 300px;
   }
 
-  .galeria-podstrona {
+  .gallerypage {
     width: 60%;
-    margin: auto;
-    min-width: 24em;
+    margin: auto; 
     margin-top: 2.5em;
   }
 
@@ -443,13 +442,21 @@ nav .menu-icon {
     header{
         height: 160px;
     }
-    .galeria-podstrona > .gallery > .image > img{
+    .gallerypage > .gallery > .image > img{
         width: 40vh;
         height: 40vh;
-        object-fit: cover;
         max-width: 90%;
     }
+    .gallerypage {
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+    }
     .gallery {
+        width: 90%;
         display: flex;
         flex-direction: column;
     }
@@ -478,6 +485,14 @@ nav .menu-icon {
         display: flex;
         justify-content: center;
     }
+    .container {
+        padding: 5em;
+    }
+    .map iframe {
+        min-width: 40vh;
+        min-height: 50vh;
+        margin: 1em 0 0 0;
+      }
     
 
 
